@@ -1,8 +1,18 @@
 <?php
 
 require 'database/QueryBilder.php';
+require 'components/Auth.php';
 
 $db = new QueryBilder();
+
+$auth = new Auth($db);
+var_dump($auth->login('user2@example.com', 'asd'));
+//if($auth->login('user2@example.com', '123')){
+//    echo "OK";
+//} else {
+//    echo "NOT OK";
+//}
+exit;
 
 //$tasks = $db->getAllTasks();
 
